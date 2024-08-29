@@ -1,113 +1,113 @@
-'use client'
+"use client";
 
-import { LookUpAddressMemoized } from '@/components/look-up-address'
-import { cn } from '@repo/ui/utils'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Button } from '@repo/ui/button'
-import { CheckIcon } from '@heroicons/react/16/solid'
-import { MountainIcon } from '@/components/mountain-icon'
+import { LookUpAddressMemoized } from "@/components/look-up-address";
+import { MountainIcon } from "@/components/mountain-icon";
+import { CheckIcon } from "@heroicons/react/16/solid";
+import { Button } from "@repo/ui/button";
+import { cn } from "@repo/ui/utils";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const topics = [
   {
-    label: 'Feature',
-    title: 'Connect Multiple Wallets',
-    description: 'View your entire crypto portfolio in one place.',
+    label: "Feature",
+    title: "Connect Multiple Wallets",
+    description: "View your entire crypto portfolio in one place.",
   },
   {
-    label: 'Feature',
-    title: 'Choose Your Timeframe',
+    label: "Feature",
+    title: "Choose Your Timeframe",
     description:
-      'Analyze your activity over days, weeks, months, or even years.',
+      "Analyze your activity over days, weeks, months, or even years.",
   },
   {
-    label: 'Feature',
-    title: 'Visualize Your Data',
+    label: "Feature",
+    title: "Visualize Your Data",
     description:
-      'Get easy-to-understand charts and graphs that highlight key insights.',
+      "Get easy-to-understand charts and graphs that highlight key insights.",
   },
   {
-    label: 'Feature',
-    title: 'Share Your Story',
+    label: "Feature",
+    title: "Share Your Story",
     description:
-      'Show off your Web3 journey with shareable Wrapped-style summaries.',
+      "Show off your Web3 journey with shareable Wrapped-style summaries.",
   },
   {
-    label: 'Discover',
-    title: 'Top Tokens',
-    description: 'Which crypto assets have you traded the most?',
+    label: "Discover",
+    title: "Top Tokens",
+    description: "Which crypto assets have you traded the most?",
   },
   {
-    label: 'Discover',
-    title: 'Transaction Trends',
-    description: 'When are you most active?',
+    label: "Discover",
+    title: "Transaction Trends",
+    description: "When are you most active?",
   },
   {
-    label: 'Discover',
-    title: 'Gas Fees',
-    description: 'How much are you spending?',
+    label: "Discover",
+    title: "Gas Fees",
+    description: "How much are you spending?",
   },
   {
-    label: 'Discover',
-    title: 'And More',
+    label: "Discover",
+    title: "And More",
     description:
-      'Uncover hidden patterns and gain a deeper understanding of your crypto behavior.',
+      "Uncover hidden patterns and gain a deeper understanding of your crypto behavior.",
   },
-]
+];
 
 const tiers = [
   {
-    name: 'Free',
-    id: 'tier-Free',
-    price: '$0',
-    description: 'The essentials to provide your best work for clients.',
+    name: "Free",
+    id: "tier-Free",
+    price: "$0",
+    description: "The essentials to provide your best work for clients.",
     features: [
-      'Basic Wallet Connection',
-      'Visual Transaction History',
-      'Top Tokens Overview',
-      'Transaction Trends',
-      'Gas Fee Tracking',
+      "Basic Wallet Connection",
+      "Visual Transaction History",
+      "Top Tokens Overview",
+      "Transaction Trends",
+      "Gas Fee Tracking",
     ],
     mostPopular: false,
   },
   {
-    name: 'Premium',
-    id: 'tier-Premium',
-    price: '$30',
-    description: 'A plan that scales with your rapidly growing business.',
+    name: "Premium",
+    id: "tier-Premium",
+    price: "$30",
+    description: "A plan that scales with your rapidly growing business.",
     features: [
-      'Basic Wallet Connection',
-      'Visual Transaction History',
-      'Top Tokens Overview',
-      'Transaction Trends',
-      'Gas Fee Tracking',
-      'Advanced Analytics',
-      'Portfolio Performance Tracking',
-      'Tax Reporting Assistance',
-      'Custom Date Range Analysis',
-      'Priority Support',
+      "Basic Wallet Connection",
+      "Visual Transaction History",
+      "Top Tokens Overview",
+      "Transaction Trends",
+      "Gas Fee Tracking",
+      "Advanced Analytics",
+      "Portfolio Performance Tracking",
+      "Tax Reporting Assistance",
+      "Custom Date Range Analysis",
+      "Priority Support",
     ],
     mostPopular: true,
   },
-]
+];
 
 export function Section({ children }: { children: React.ReactNode }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section ref={ref}>
       <span
         style={{
-          transform: isInView ? 'none' : 'translateX(-200px)',
+          transform: isInView ? "none" : "translateX(-200px)",
           opacity: isInView ? 1 : 0,
-          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
       >
         {children}
       </span>
     </section>
-  )
+  );
 }
 
 export default function RecapPage() {
@@ -146,18 +146,18 @@ export default function RecapPage() {
               <div
                 key={index}
                 className={cn(
-                  'rounded-xl p-6 text-left ring-1 ring-blue-500 transition-all sm:min-h-[220px]',
+                  "rounded-xl p-6 text-left ring-1 ring-blue-500 transition-all sm:min-h-[220px]",
                   index < 4
-                    ? 'bg-gray-50 hover:bg-white text-black'
-                    : 'bg-vercel-card text-white hover:bg-vercel-card/70',
+                    ? "bg-gray-50 hover:bg-white text-black"
+                    : "bg-vercel-card text-white hover:bg-vercel-card/70",
                 )}
               >
                 <span
                   className={cn(
-                    'text-xs font-semibold rounded-full px-2 py-1',
+                    "text-xs font-semibold rounded-full px-2 py-1",
                     index < 4
-                      ? 'text-primary-foreground bg-primary'
-                      : 'text-secondary-foreground bg-secondary',
+                      ? "text-primary-foreground bg-primary"
+                      : "text-secondary-foreground bg-secondary",
                   )}
                 >
                   {topic.label}
@@ -187,9 +187,9 @@ export default function RecapPage() {
                   key={tier.id}
                   className={cn(
                     tier.mostPopular
-                      ? 'ring-2 ring-blue-500'
-                      : 'ring-1 ring-zinc-600',
-                    'rounded-xl p-8 xl:p-10 space-y-8 max-w-sm text-white',
+                      ? "ring-2 ring-blue-500"
+                      : "ring-1 ring-zinc-600",
+                    "rounded-xl p-8 xl:p-10 space-y-8 max-w-sm text-white",
                   )}
                 >
                   <div className="flex items-center justify-between gap-x-4">
@@ -219,10 +219,7 @@ export default function RecapPage() {
                     </Button>
                   )}
 
-                  <ul
-                    role="list"
-                    className="space-y-3 text-sm leading-6 text-gray-100 xl:mt-10"
-                  >
+                  <ul className="space-y-3 text-sm leading-6 text-gray-100 xl:mt-10">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex gap-x-3">
                         <CheckIcon
@@ -246,5 +243,5 @@ export default function RecapPage() {
         </div>
       </Section>
     </>
-  )
+  );
 }

@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
-import DataCard from './data-card'
-import DataCard2 from './data-card2'
-import { Card, CardContent } from '@repo/ui/card'
-import { Input } from '@repo/ui/input'
-import { Button } from '@repo/ui/button'
-import { memo } from 'react'
+import { Button } from "@repo/ui/button";
+import { Card, CardContent } from "@repo/ui/card";
+import { Input } from "@repo/ui/input";
+import { memo } from "react";
+import DataCard from "./data-card";
+import DataCard2 from "./data-card2";
 
 function LookUpAddress() {
   // const { address } = useAccount()
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const formData = new FormData(e.target as HTMLFormElement)
-    console.log(formData)
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    console.log(formData);
   }
 
   return (
@@ -94,7 +94,7 @@ function LookUpAddress() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
 
-export const LookUpAddressMemoized = memo(LookUpAddress)
+export const LookUpAddressMemoized = memo(LookUpAddress);

@@ -1,37 +1,37 @@
-import { Section } from '../recap/page'
+import { Section } from "../recap/page";
 
 const coreValues = [
   {
-    title: 'User-Centric Design',
+    title: "User-Centric Design",
     description:
-      'We prioritize user experience by ensuring our products are intuitive, easy to use, and a joy to interact with.',
+      "We prioritize user experience by ensuring our products are intuitive, easy to use, and a joy to interact with.",
   },
   {
-    title: 'Seamless Functionality',
+    title: "Seamless Functionality",
     description:
-      'We obsess over the details, crafting solutions that work flawlessly and integrate seamlessly into your life.',
+      "We obsess over the details, crafting solutions that work flawlessly and integrate seamlessly into your life.",
   },
   {
-    title: 'Gorgeous UI',
+    title: "Gorgeous UI",
     description:
-      'We believe that aesthetics matter. Our interfaces are visually stunning, creating a delightful user experience.',
+      "We believe that aesthetics matter. Our interfaces are visually stunning, creating a delightful user experience.",
   },
   {
-    title: 'Web2 & Web3 Expertise',
+    title: "Web2 & Web3 Expertise",
     description:
-      'We embrace the evolution of technology, building products that harness the power of both Web2 and Web3.',
+      "We embrace the evolution of technology, building products that harness the power of both Web2 and Web3.",
   },
   {
-    title: 'Unexpected Delight',
+    title: "Unexpected Delight",
     description:
       "We anticipate needs you haven't even realized yet, creating products that surprise, entertain, and make you wonder how you ever lived without them.",
   },
   {
-    title: 'Passion for Innovation',
+    title: "Passion for Innovation",
     description:
       "We're relentlessly exploring new ideas, pushing the boundaries of what's possible to create truly transformative tech.",
   },
-]
+];
 
 export default function AboutPage() {
   return (
@@ -41,7 +41,7 @@ export default function AboutPage() {
           About Us
         </h1>
         <p className="text-xl max-w-3xl mb-8 font-light">
-          <strong className="underline underline-offset-2">Neonix Labs</strong>{' '}
+          <strong className="underline underline-offset-2">Neonix Labs</strong>{" "}
           is a dynamic team of tech enthusiasts, designers, and innovators
           dedicated to pushing the boundaries of what's possible in the digital
           world. We're more than just a tech company; we're a playground for
@@ -71,5 +71,5 @@ export default function AboutPage() {
         </div>
       </Section>
     </>
-  )
+  );
 }

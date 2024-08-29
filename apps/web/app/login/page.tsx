@@ -1,4 +1,4 @@
-import { Button } from '@repo/ui/button'
+import { Button } from "@repo/ui/button";
 import {
   Card,
   CardContent,
@@ -6,9 +6,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@repo/ui/card'
-import { Input } from '@repo/ui/input'
-import { Label } from '@repo/ui/label'
+} from "@repo/ui/card";
+import { Input } from "@repo/ui/input";
+import { Label } from "@repo/ui/label";
 
 export default function LoginForm() {
   return (
@@ -50,5 +50,5 @@ export default function LoginForm() {
         </Card>
       </div>
     </>
-  )
+  );
 }

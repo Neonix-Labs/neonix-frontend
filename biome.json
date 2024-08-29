@@ -4,22 +4,27 @@
     "enabled": true
   },
   "linter": {
-    "ignore": ["node_modules"],
+    "ignore": ["node_modules", ".next"],
     "enabled": true,
     "rules": {
       "recommended": true,
       "a11y": {
-        "noSvgWithoutTitle": "off"
+        "noSvgWithoutTitle": "off",
+        "useButtonType": "off"
       },
       "style": {
         "noNonNullAssertion": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
       }
     }
   },
   "formatter": {
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "ignore": ["node_modules", ".next"]
   }
 }

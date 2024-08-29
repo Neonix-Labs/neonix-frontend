@@ -1,37 +1,37 @@
-'use client'
+"use client";
 
-import * as React from 'react'
+import * as React from "react";
 import {
+  type Connector,
   useAccount,
+  useConnect,
   useDisconnect,
   useEnsName,
-  useConnect,
-  Connector,
-} from 'wagmi'
+} from "wagmi";
 
 export function ConnectWallet() {
-  const { isConnected } = useAccount()
-  if (isConnected) return <Account />
-  return <WalletOptions />
+  const { isConnected } = useAccount();
+  if (isConnected) return <Account />;
+  return <WalletOptions />;
 }
 
 export function Account() {
-  const { address } = useAccount()
-  const { disconnect } = useDisconnect()
-  const { data: ensName } = useEnsName({ address })
+  const { address } = useAccount();
+  const { disconnect } = useDisconnect();
+  const { data: ensName } = useEnsName({ address });
 
   return (
     <div>
       {address && <div>{ensName ? `${ensName} (${address})` : address}</div>}
       <button onClick={() => disconnect()}>Disconnect</button>
     </div>
-  )
+  );
 }
 
 export function WalletOptions() {
-  const { connectors, connect } = useConnect()
+  const { connectors, connect } = useConnect();
 
-  console.log(connectors)
+  console.log(connectors);
 
   return connectors.map((connector) => (
     <WalletOption
@@ -39,28 +39,28 @@ export function WalletOptions() {
       connector={connector}
       onClick={() => connect({ connector })}
     />
-  ))
+  ));
 }
 
 function WalletOption({
   connector,
   onClick,
 }: {
-  connector: Connector
-  onClick: () => void
+  connector: Connector;
+  onClick: () => void;
 }) {
-  const [ready, setReady] = React.useState(false)
+  const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {
-    ;(async () => {
-      const provider = await connector.getProvider()
-      setReady(!!provider)
-    })()
-  }, [connector])
+    (async () => {
+      const provider = await connector.getProvider();
+      setReady(!!provider);
+    })();
+  }, [connector]);
 
   return (
     <button disabled={!ready} onClick={onClick}>
       {connector.name}
     </button>
-  )
+  );
 }

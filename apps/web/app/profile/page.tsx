@@ -1,3 +1,5 @@
+import { Button } from "@repo/ui/button";
+
 export default function ProfilePage() {
   return (
     <>
@@ -6,11 +8,11 @@ export default function ProfilePage() {
           <nav className="grid gap-4 text-sm text-muted-foreground">
             <h1 className="text-3xl font-semibold text-white">Profile</h1>
 
-            <a className="font-semibold text-primary" href="#">
+            <a className="font-semibold text-primary" href="/">
               General
             </a>
-            <a href="#">Security</a>
-            <a href="#">Integrations</a>
+            <a href="/">Security</a>
+            <a href="/">Integrations</a>
           </nav>
           <div className="grid gap-6">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
@@ -31,9 +33,9 @@ export default function ProfilePage() {
                 </form>
               </div>
               <div className="flex items-center p-6 border-t px-6 py-4">
-                <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                <Button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
                   Save
-                </button>
+                </Button>
               </div>
             </div>
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
@@ -79,11 +81,11 @@ export default function ProfilePage() {
                           stroke-linejoin="round"
                           className="lucide lucide-check h-4 w-4"
                         >
-                          <path d="M20 6 9 17l-5-5"></path>
+                          <path d="M20 6 9 17l-5-5" />
                         </svg>
                       </span>
                     </button>
-                    <input type="checkbox" aria-hidden="true" value="on" />{' '}
+
                     <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                       Allow administrators to change the directory.
                     </label>
@@ -91,14 +93,14 @@ export default function ProfilePage() {
                 </form>
               </div>
               <div className="flex items-center p-6 border-t px-6 py-4">
-                <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                <Button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
                   Save
-                </button>
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }

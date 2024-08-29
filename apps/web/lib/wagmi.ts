@@ -1,5 +1,5 @@
-import { http, createConfig, createStorage, cookieStorage } from 'wagmi'
-import { mainnet, sepolia } from 'wagmi/chains'
+import { http, createConfig, createStorage, cookieStorage } from "wagmi";
+import { mainnet, sepolia } from "wagmi/chains";
 
 export const config = createConfig({
   chains: [mainnet, sepolia],
@@ -11,4 +11,4 @@ export const config = createConfig({
     [mainnet.id]: http(),
     [sepolia.id]: http(),
   },
-})
+});

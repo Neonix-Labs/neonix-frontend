@@ -5,7 +5,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "format": "biome format --write .",
-    "lint": "turbo lint && manypkg check"
+    "lint": "turbo lint && manypkg check",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "turbo": "^2.1.0",

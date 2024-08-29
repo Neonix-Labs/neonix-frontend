@@ -1,8 +1,8 @@
 export interface ContactEmailTemplateProps {
-  email: string
-  message: string
-  name: string
-  phone?: string
+  email: string;
+  message: string;
+  name: string;
+  phone?: string;
 }
 
 export function ContactEmailTemplate(props: ContactEmailTemplateProps) {
@@ -19,5 +19,5 @@ export function ContactEmailTemplate(props: ContactEmailTemplateProps) {
       </p>
       <p>Thanks for using our contact form!</p>
     </div>
-  )
+  );
 }
