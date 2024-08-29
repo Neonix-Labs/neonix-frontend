@@ -18,11 +18,5 @@
   },
   "dependencies": {
     "react": "^18.2.0"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all"
   }
 }
