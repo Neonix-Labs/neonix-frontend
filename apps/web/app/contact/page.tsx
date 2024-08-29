@@ -1,12 +1,8 @@
-'use client'
+"use client";
 
-import { Button } from '@repo/ui/button'
-import React from 'react'
-import { z } from 'zod'
-import { useAction } from 'next-safe-action/hooks'
-import { sendMail } from '@/actions/send-email'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { sendMail } from "@/actions/send-email";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@repo/ui/button";
 import {
   Form,
   FormControl,
@@ -14,41 +10,45 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@repo/ui/form'
-import { Input } from '@repo/ui/input'
-import { Textarea } from '@repo/ui/textarea'
-import { toast } from 'sonner'
-import { SubmitButton } from '@repo/ui/submit-button'
+} from "@repo/ui/form";
+import { Input } from "@repo/ui/input";
+import { SubmitButton } from "@repo/ui/submit-button";
+import { Textarea } from "@repo/ui/textarea";
+import { useAction } from "next-safe-action/hooks";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string(),
   email: z.string().email(),
   phone: z.string().optional(),
   message: z.string(),
-})
+});
 
 export default function ContactPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: '', email: '', phone: '', message: '' },
-  })
+    defaultValues: { name: "", email: "", phone: "", message: "" },
+  });
 
   const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({
-      behavior: 'smooth',
-    })
-  }
+    document.getElementById("contact-form")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   const { execute: send, isPending } = useAction(sendMail, {
     onSuccess: () => {
       toast.success(
         "Your message has been sent! We'll get back to you as soon as possible.",
-      )
+      );
     },
     onError: (error) => {
-      console.error(error)
+      console.error(error);
     },
-  })
+  });
 
   return (
     <>
@@ -155,5 +155,5 @@ export default function ContactPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

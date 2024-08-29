@@ -4,11 +4,10 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "biome format --write .",
+    "lint": "turbo lint && manypkg check"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
     "turbo": "^2.1.0",
     "typescript": "^5.4.5"
   },
@@ -16,17 +15,10 @@
     "node": ">=18"
   },
   "packageManager": "npm@9.9.3",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all"
-  },
+  "workspaces": ["apps/*", "packages/*"],
   "dependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@manypkg/cli": "^0.21.4",
     "tailwindcss": "^3.4.10"
   }
 }
