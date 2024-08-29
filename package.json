@@ -19,5 +19,14 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.10"
+  }
 }
