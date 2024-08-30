@@ -1,23 +1,26 @@
-export interface ContactEmailTemplateProps {
+export interface EmailTemplateProps {
   email: string;
   message: string;
   name: string;
   phone?: string;
 }
 
-export function ContactEmailTemplate(props: ContactEmailTemplateProps) {
+export function ContactTemplate(props: EmailTemplateProps) {
   return (
     <div>
-      <p>Contact request from {props.name}!</p>
-      <p>
-        You've received a new contact request from {props.name}. Here's what
-        they had to say:
-      </p>
+      <p>Hi Team,</p>
+      <br />
+      <p>We’ve received a new inquiry from a user! Here are the details:</p>
+      <br />
+      <p>• Name: {props.name}</p>
+      <p>• Email: {props.email}</p>
+      <p>• Phone: {props.phone}</p>
+      <p>• Message:</p>
       <p>{props.message}</p>
-      <p>
-        You can reach out to them at {props.email} or {props.phone}.
-      </p>
-      <p>Thanks for using our contact form!</p>
+      <br />
+      <p>Please review and let’s determine the best way to respond.</p>
+      <br />
+      <p>Best regards,</p>
     </div>
   );
 }

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./contact": "./src/contact.tsx"
+    "./contact": "./src/contact.tsx",
+    "./waitlist": "./src/waitlist.tsx"
   },
   "scripts": {
     "lint": "biome check ."

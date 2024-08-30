@@ -2,7 +2,6 @@
 
 import { sendMail } from "@/actions/send-email";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@repo/ui/button";
 import {
   Form,
   FormControl,
@@ -33,12 +32,6 @@ export default function ContactPage() {
     defaultValues: { name: "", email: "", phone: "", message: "" },
   });
 
-  const scrollToForm = () => {
-    document.getElementById("contact-form")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   const { execute: send, isPending } = useAction(sendMail, {
     onSuccess: () => {
       toast.success(
@@ -52,33 +45,18 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="px-4 flex flex-col items-center justify-center text-center min-h-screen">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 max-w-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-          Let's Connect
+      <div className="container max-w-[750px] relative mx-auto hero-slide-up">
+        <h1 className="mt-24 font-medium text-center text-5xl mb-16 leading-snug">
+          Talk to us
         </h1>
-        <p className="text-xl max-w-3xl mb-8 font-light">
-          Have a question, suggestion, or just want to say hello? We're here for
-          you! Reach out to us and let's spark a conversation about how we can
-          build the future together.
+        <p className="text-[#878787] mb-8">
+          We value your feedback and are always open to exploring new
+          partnerships and collaborations. Don't hesitate to reach out – we're
+          excited to see how we can create
         </p>
-        <Button onClick={scrollToForm}>Get in touch</Button>
       </div>
 
-      <div
-        className="space-y-12 px-4 md:px-6 py-12 md:py-24 lg:py-32"
-        id="contact-form"
-      >
-        <div className="space-y-6 text-center">
-          <h2 className="text-4xl font-bold tracking-tighter mb-4 mx-auto max-w-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-            We're Eager to Hear from You!
-          </h2>
-          <h4 className="text-lg max-w-xl mx-auto text-center text-white bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-            We value your feedback and are always open to exploring new
-            partnerships and collaborations. Don't hesitate to reach out – we're
-            excited to see how we can create
-          </h4>
-        </div>
-
+      <div className="space-y-12 px-4 md:px-6 py-12 relative" id="contact-form">
         <div className="text-lg max-w-xl mx-auto mt-8">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(send)} className="space-y-8">
@@ -144,10 +122,7 @@ export default function ContactPage() {
                 )}
               />
 
-              <SubmitButton
-                isSubmitting={isPending}
-                className="bg-indigo-500 hover:bg-indigo-600 text-white min-w-52 flex items-center justify-center"
-              >
+              <SubmitButton isSubmitting={isPending} variant="outline">
                 Send message
               </SubmitButton>
             </form>

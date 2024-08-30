@@ -1,4 +1,4 @@
-import { Section } from "../recap/page";
+import { MissionStatememnt } from "@/components/mission-statement";
 
 const coreValues = [
   {
@@ -36,12 +36,14 @@ const coreValues = [
 export default function AboutPage() {
   return (
     <>
-      <div className="px-4 flex flex-col items-center justify-center text-center min-h-screen">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 max-w-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+      <div className="container max-w-[750px] relative mx-auto hero-slide-up">
+        <h1 className="mt-24 font-medium text-center text-5xl mb-16 leading-snug">
           About Us
         </h1>
-        <p className="text-xl max-w-3xl mb-8 font-light">
-          <strong className="underline underline-offset-2">Neonix Labs</strong>{" "}
+        <p className="text-[#878787] mb-8">
+          <strong className="underline underline-offset-2 text-white">
+            Neonix Labs
+          </strong>{" "}
           is a dynamic team of tech enthusiasts, designers, and innovators
           dedicated to pushing the boundaries of what's possible in the digital
           world. We're more than just a tech company; we're a playground for
@@ -49,27 +51,25 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <Section>
-        <div className="py-14">
-          <div className="container mx-auto max-w-7xl space-y-12">
-            <h2 className="font-bold text-4xl text-center">Core Values</h2>
+      <div className="pt-32 relative">
+        <div className="container mx-auto max-w-7xl space-y-12">
+          <h2 className="font-bold text-4xl text-center">Our Values</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {coreValues.map((core, index) => (
-                <div
-                  key={index}
-                  className="p-0.5 rounded-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
-                >
-                  <div className="flex flex-col h-full w-full p-6 justify-center rounded-xl bg-gray-800 space-y-4">
-                    <h3 className="font-bold text-lg">{core.title}</h3>
-                    <p className="text-base font-light">{core.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {coreValues.map((core, index) => (
+              <div
+                key={index}
+                className="border border-border basis-1/3 bg-[#121212] p-10 flex flex-col gap-4"
+              >
+                <h3 className="font-bold text-lg">{core.title}</h3>
+                <p className="text-base font-light">{core.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </Section>
+      </div>
+
+      <MissionStatememnt />
     </>
   );
 }
