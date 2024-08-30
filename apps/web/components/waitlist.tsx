@@ -31,7 +31,7 @@ export function RecapWailist() {
     <section className="relative container mx-auto ">
       <div className="relative bg-[#121212] p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
         <h1 className="font-medium text-center text-5xl leading-snug">
-          Comming soon
+          Coming soon
         </h1>
         <h1 className="font-thin text-center text-3xl mb-4 leading-snug mt-6">
           Join the waitlist

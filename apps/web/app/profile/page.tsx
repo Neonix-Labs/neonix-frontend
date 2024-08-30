@@ -3,7 +3,7 @@ import { Button } from "@repo/ui/button";
 export default function ProfilePage() {
   return (
     <>
-      <div className="container mx-auto p-4 py-12">
+      <div className="container mx-auto p-4 py-12 px-4">
         <div className="grid w-full items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
           <nav className="grid gap-4 text-sm text-muted-foreground">
             <h1 className="text-3xl font-semibold text-white">Profile</h1>
@@ -76,9 +76,9 @@ export default function ProfilePage() {
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           className="lucide lucide-check h-4 w-4"
                         >
                           <path d="M20 6 9 17l-5-5" />

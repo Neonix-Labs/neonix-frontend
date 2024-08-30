@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import "@repo/ui/globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { MountainIcon } from "@/components/mountain-icon";
 import { Providers } from "@/lib/providers";
 import { config } from "@/lib/wagmi";
 import { cn } from "@repo/ui/utils";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { headers } from "next/headers";
-import Link from "next/link";
 import { Toaster } from "sonner";
 import { cookieToInitialState } from "wagmi";
 
@@ -30,13 +28,13 @@ export default function RootLayout({
       <body
         className={cn(
           `${GeistSans.variable} ${GeistMono.variable}`,
-          "whitespace-pre-line relative bg-[#0C0C0C] text-white dark overflow-x-hidden",
+          "bg-[#0C0C0C] overflow-x-hidden dark antialiased relative",
         )}
       >
-        <div className="dotted-bg absolute w-[10000px] h-full top-0" />
+        <div className="dotted-bg absolute w-screen h-full top-0" />
 
         <Providers initialState={initialState}>
-          <div className="flex flex-col min-h-dvh font-inter mx-auto px-4 sm:px-0">
+          <div className="px-4 sm:px-0 overflow-hidden md:overflow-visible">
             <Header />
 
             {children}

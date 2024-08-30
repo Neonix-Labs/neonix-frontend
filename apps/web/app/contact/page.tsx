@@ -45,7 +45,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="container max-w-[750px] relative mx-auto hero-slide-up">
+      <div className="container max-w-[750px] relative mx-auto hero-slide-up px-4">
         <h1 className="mt-24 font-medium text-center text-5xl mb-16 leading-snug">
           Talk to us
         </h1>
