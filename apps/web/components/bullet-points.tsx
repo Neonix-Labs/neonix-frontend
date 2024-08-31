@@ -78,9 +78,11 @@ export function BulletPoints() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
           {features.map((feat, index) => (
             <div className="flex gap-4 items-start flex-col" key={index}>
-              {feat.logo}
               <div>
-                <h3 className="font-semibold text-lg">{feat.title}</h3>
+                <h3 className="font-semibold text-lg flex gap-3 items-center">
+                  {feat.logo}
+                  {feat.title}
+                </h3>
                 <p className="text-slate-500 mt-2 leading-relaxed">
                   {feat.description}
                 </p>
