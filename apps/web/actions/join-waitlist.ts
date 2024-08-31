@@ -1,6 +1,8 @@
 "use server";
 
 import { WaitlistTemplate } from "@repo/email-templates/waitlist";
+import { createClient } from "@repo/supabase/server";
+import { cookies } from "next/headers";
 import { Resend } from "resend";
 import { z } from "zod";
 import { actionClient } from "../lib/safe-actions";
@@ -14,6 +16,17 @@ const sendMailSchema = z.object({
 export const joinWaitlist = actionClient
   .schema(sendMailSchema)
   .action(async ({ parsedInput: { email } }) => {
+    const cookiesStore = cookies();
+    const supabase = createClient(cookiesStore);
+
+    const inserted = await supabase.from("waitlist").insert({
+      email,
+    });
+
+    if (inserted.error) {
+      throw Error(inserted.error.message);
+    }
+
     await resend.emails.send({
       from: "Neonix Labs <onboarding@resend.dev>",
       to: ["tiagoagm@gmail.com"],
@@ -22,4 +35,6 @@ export const joinWaitlist = actionClient
         email,
       }),
     });
+
+    return;
   });

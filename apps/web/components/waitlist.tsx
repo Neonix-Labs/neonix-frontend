@@ -14,7 +14,9 @@ import { SubmitButton } from "@repo/ui/submit-button";
 import { useAction } from "next-safe-action/hooks";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
+
 const formSchema = z.object({
   email: z.string().email(),
 });
@@ -25,10 +27,21 @@ export function RecapWailist() {
     defaultValues: { email: "" },
   });
 
-  const { execute: send, isPending, hasSucceeded } = useAction(joinWaitlist);
+  const {
+    execute: send,
+    isPending,
+    hasSucceeded,
+  } = useAction(joinWaitlist, {
+    onError: () => {
+      toast.info("Thank you for joining our waitlist!", {
+        description:
+          "You’re already in line, and we’ll notify you as soon as your spot is ready. We appreciate your patience.",
+      });
+    },
+  });
 
   return (
-    <section className="relative container mx-auto ">
+    <section className="relative container mx-auto">
       <div className="relative bg-[#121212] p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
         <h1 className="font-medium text-center text-5xl leading-snug">
           Coming soon

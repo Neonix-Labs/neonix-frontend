@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={cn(
           `${GeistSans.variable} ${GeistMono.variable}`,
-          "bg-[#0C0C0C] overflow-x-hidden dark antialiased relative",
+          "bg-zinc-950 overflow-x-hidden dark antialiased relative",
         )}
       >
         <div className="dotted-bg absolute w-screen h-full top-0" />

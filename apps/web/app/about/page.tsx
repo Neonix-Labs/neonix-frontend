@@ -36,8 +36,8 @@ const coreValues = [
 export default function AboutPage() {
   return (
     <>
-      <div className="container max-w-[750px] relative mx-auto hero-slide-up px-4">
-        <h1 className="mt-24 font-medium text-center text-5xl mb-16 leading-snug">
+      <div className="container max-w-[750px] relative mx-auto hero-slide-up px-4 text-center">
+        <h1 className="mt-24 font-medium text-5xl mb-16 leading-snug">
           About Us
         </h1>
         <p className="text-[#878787] mb-8">

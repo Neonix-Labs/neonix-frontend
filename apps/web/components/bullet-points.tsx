@@ -1,26 +1,38 @@
+import {
+  FaCalendar,
+  FaChartBar,
+  FaGlobe,
+  FaLink,
+  FaWallet,
+} from "react-icons/fa";
 import { RecapWailist } from "./waitlist";
 
 const features = [
   {
+    logo: <FaWallet className="size-4" />,
     title: "Multi-Wallet Support",
     description:
       "Connect multiple wallets to get a comprehensive view of your Web3 presence.",
   },
   {
+    logo: <FaCalendar className="size-4" />,
     title: "Customizable Date Ranges",
     description: "Analyze your activities over any time period you choose.",
   },
   {
+    logo: <FaChartBar className="size-4" />,
     title: "Visual Data Presentation",
     description:
       'Get your data in a visually appealing, "Wrapped-style" summary.',
   },
   {
+    logo: <FaLink className="size-4" />,
     title: "Cross-Chain Analysis",
     description:
       "Starting with BNB Chain and Ethereum, with more blockchains coming soon.",
   },
   {
+    logo: <FaGlobe className="size-4" />,
     title: "Shareable Insights",
     description: "Easily share your Web3 journey on social media.",
   },
@@ -66,7 +78,7 @@ export function BulletPoints() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
           {features.map((feat, index) => (
             <div className="flex gap-4 items-start flex-col" key={index}>
-              <div className="mt-1 bg-white rounded-full p-2 w-6 h-6 shrink-0" />
+              {feat.logo}
               <div>
                 <h3 className="font-semibold text-lg">{feat.title}</h3>
                 <p className="text-slate-500 mt-2 leading-relaxed">
