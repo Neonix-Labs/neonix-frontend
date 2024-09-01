@@ -5,7 +5,7 @@ import { createClient } from "@repo/supabase/server";
 import { cookies } from "next/headers";
 import { Resend } from "resend";
 import { z } from "zod";
-import { actionClient } from "../lib/safe-actions";
+import { actionClient } from "../safe-actions";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

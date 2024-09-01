@@ -3,7 +3,7 @@
 import { ContactTemplate } from "@repo/email-templates/contact";
 import { Resend } from "resend";
 import { z } from "zod";
-import { actionClient } from "../lib/safe-actions";
+import { actionClient } from "../safe-actions";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
