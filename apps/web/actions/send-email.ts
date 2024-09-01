@@ -20,7 +20,7 @@ export const sendMail = actionClient
     await resend.emails.send({
       from: "Neonix Labs <onboarding@resend.dev>",
       to: ["tiagoagm@gmail.com"],
-      subject: "Contact Form Submission",
+      subject: "User Inquiry Received",
       react: ContactTemplate({
         name,
         email,
@@ -28,4 +28,6 @@ export const sendMail = actionClient
         phone,
       }),
     });
+
+    return;
   });

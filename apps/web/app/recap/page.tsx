@@ -1,4 +1,4 @@
-"use server";
+"use client";
 
 import { RecapWailist } from "@/components/waitlist";
 
@@ -30,15 +30,15 @@ const features = [
   },
 ];
 
-export default async function RecapPage() {
+export default function RecapPage() {
   return (
     <>
-      <div className="container max-w-[750px] relative mx-auto hero-slide-up px-4 text-center">
+      <div className="container max-w-[750px] relative mx-auto px-4 text-center">
         <h1 className="mt-24 font-medium text-5xl leading-snug">Recap</h1>
         <h1 className="font-thin text-5xl mb-4 leading-snug">
           Your Web3 Story, Unfolded
         </h1>
-        <p className="text-[#878787] mb-8">
+        <p className="text-zinc-500 mb-8">
           Tired of sifting through endless transactions? Recap gives you the big
           picture. Connect your Web3 wallet (or simply enter your address) to
           instantly see a visual summary of your crypto activity over any time
@@ -57,11 +57,11 @@ export default async function RecapPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {features.map((feat, index) => (
               <div
                 key={index}
-                className="border border-border basis-1/3 bg-[#121212] p-10 flex flex-col gap-4"
+                className="border border-border basis-1/3 bg-zinc-900 p-10 flex flex-col gap-4 rounded-md"
               >
                 <h3 className="font-bold text-lg">{feat.title}</h3>
                 <p className="text-base font-light">{feat.description}</p>

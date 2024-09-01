@@ -4,18 +4,16 @@ export interface EmailTemplateProps {
 
 export function WaitlistTemplate(props: EmailTemplateProps) {
   return (
-    <div>
-      <div>Hi Team,</div>
-      <br />
-      <div> A new user has just joined the Recap waitlist! 🎉 </div>
-      <br />
-      <p>Here are the details:</p>
-      <br />
-      <p>• Email: {props.email}</p>
-      <br />
-      <p> Let’s keep them in the loop as we prepare for launch.</p>
-      <br />
-      <p>Best regards,</p>
+    <div style={{ margin: 0, padding: 0, color: "#333" }}>
+      <div>
+        <p>Hi Team,</p>
+        <p>A new user has just joined the Recap waitlist! 🎉</p>
+        <p style={{ margin: "5px 0" }}>
+          <strong>Email:</strong> {props.email}
+        </p>
+        <p>Let’s keep them in the loop as we prepare for launch.</p>
+        <p>Ciao Team</p>
+      </div>
     </div>
   );
 }

@@ -23,6 +23,8 @@ export const joinWaitlist = actionClient
       email,
     });
 
+    console.log(inserted);
+
     if (inserted.error) {
       throw Error(inserted.error.message);
     }
@@ -30,7 +32,7 @@ export const joinWaitlist = actionClient
     await resend.emails.send({
       from: "Neonix Labs <onboarding@resend.dev>",
       to: ["tiagoagm@gmail.com"],
-      subject: "Join Waitlist",
+      subject: "User Joined the Recap Waitlist",
       react: WaitlistTemplate({
         email,
       }),

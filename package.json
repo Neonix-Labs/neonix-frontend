@@ -9,14 +9,17 @@
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
-    "turbo": "^2.1.0",
+    "turbo": "^2.1.1",
     "typescript": "^5.4.5"
   },
   "engines": {
     "node": ">=18"
   },
   "packageManager": "npm@9.9.3",
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "dependencies": {
     "@biomejs/biome": "^1.8.3",
     "@manypkg/cli": "^0.21.4",

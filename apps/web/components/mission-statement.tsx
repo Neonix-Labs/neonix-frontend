@@ -1,7 +1,7 @@
 export function MissionStatememnt() {
   return (
     <section className="relative container mx-auto ">
-      <div className="relative bg-[#121212] p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
+      <div className="relative bg-zinc-900 p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
         <h2 className="text-4xl md:text-6xl tracking-tight">
           Mission Statement
         </h2>

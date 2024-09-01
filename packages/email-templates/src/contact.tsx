@@ -7,20 +7,28 @@ export interface EmailTemplateProps {
 
 export function ContactTemplate(props: EmailTemplateProps) {
   return (
-    <div>
-      <p>Hi Team,</p>
-      <br />
-      <p>We’ve received a new inquiry from a user! Here are the details:</p>
-      <br />
-      <p>• Name: {props.name}</p>
-      <p>• Email: {props.email}</p>
-      <p>• Phone: {props.phone}</p>
-      <p>• Message:</p>
-      <p>{props.message}</p>
-      <br />
-      <p>Please review and let’s determine the best way to respond.</p>
-      <br />
-      <p>Best regards,</p>
+    <div style={{ margin: 0, padding: 0, color: "#333" }}>
+      <div>
+        <p>Hi Team,</p>
+        <p>We’ve received a new inquiry from a user! Here are the details:</p>
+        <div>
+          <p style={{ margin: "5px 0" }}>
+            <strong>Name:</strong> {props.name}
+          </p>
+          <p style={{ margin: "5px 0" }}>
+            <strong>Email:</strong> {props.email}
+          </p>
+          <p style={{ margin: "5px 0" }}>
+            <strong>Phone:</strong> {props.phone}
+          </p>
+          <p style={{ margin: "5px 0" }}>
+            <strong>Message:</strong>
+          </p>
+          <p style={{ margin: "10px 0" }}>{props.message}</p>
+        </div>
+        <p>Please review and let’s determine the best way to respond.</p>
+        <p>Ciao Team</p>
+      </div>
     </div>
   );
 }

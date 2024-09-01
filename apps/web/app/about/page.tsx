@@ -36,11 +36,11 @@ const coreValues = [
 export default function AboutPage() {
   return (
     <>
-      <div className="container max-w-[750px] relative mx-auto hero-slide-up px-4 text-center">
+      <div className="container max-w-[750px] relative mx-auto px-4 text-center">
         <h1 className="mt-24 font-medium text-5xl mb-16 leading-snug">
           About Us
         </h1>
-        <p className="text-[#878787] mb-8">
+        <p className="text-zinc-500 mb-8">
           <strong className="underline underline-offset-2 text-white">
             Neonix Labs
           </strong>{" "}
@@ -53,13 +53,15 @@ export default function AboutPage() {
 
       <div className="pt-32 relative">
         <div className="container mx-auto max-w-7xl space-y-12">
-          <h2 className="font-bold text-4xl text-center">Our Values</h2>
+          <h2 className="font-bold text-4xl text-center leading-snug">
+            Our Values
+          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {coreValues.map((core, index) => (
               <div
                 key={index}
-                className="border border-border basis-1/3 bg-[#121212] p-10 flex flex-col gap-4"
+                className="border border-zinc-800 basis-1/3 bg-black/50 p-10 flex flex-col gap-4 rounded-md"
               >
                 <h3 className="font-bold text-lg">{core.title}</h3>
                 <p className="text-base font-light">{core.description}</p>

@@ -31,10 +31,10 @@ export default function RootLayout({
           "bg-zinc-950 overflow-x-hidden dark antialiased relative",
         )}
       >
-        <div className="dotted-bg absolute w-screen h-full top-0" />
+        <div className="dotted-bg absolute w-screen h-full inset-0" />
 
         <Providers initialState={initialState}>
-          <div className="px-4 sm:px-0 overflow-hidden md:overflow-visible">
+          <div className="px-4 sm:px-0 overflow-hidden md:overflow-visible hero-slide-up">
             <Header />
 
             {children}

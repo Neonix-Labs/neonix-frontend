@@ -42,14 +42,14 @@ export function RecapWailist() {
 
   return (
     <section className="relative container mx-auto">
-      <div className="relative bg-[#121212] p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
+      <div className="relative border p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
         <h1 className="font-medium text-center text-5xl leading-snug">
           Coming soon
         </h1>
-        <h1 className="font-thin text-center text-3xl mb-4 leading-snug mt-6">
+        <h1 className="font-thin text-center text-3xl my-4 leading-snug">
           Join the waitlist
         </h1>
-        <p className="text-[#878787] mb-8">
+        <p className="text-zinc-500 mb-8">
           Recap is currently in development. By joining our waiting list, you'll
           get early access to the free tier and be notified about our launch and
           upcoming features.
@@ -58,7 +58,7 @@ export function RecapWailist() {
         <div className="mt-8">
           <div className="flex justify-center">
             {hasSucceeded ? (
-              <div className="border border-[#2C2C2C] font-sm text-primary h-11 w-[330px] flex items-center py-1 px-3 justify-between">
+              <div className="rounded-md border border-[#2C2C2C] font-sm text-primary h-11 w-[330px] flex items-center py-1 px-3 justify-between">
                 <p>Subscribed</p>
 
                 <svg

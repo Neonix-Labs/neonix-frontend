@@ -91,7 +91,7 @@ export function BulletPoints() {
           ))}
         </div>
 
-        <p className="text-[#878787] pt-12">
+        <p className="text-zinc-500 pt-12">
           Stay tuned and join our waiting list to be the first to experience
           these exciting new features!
         </p>

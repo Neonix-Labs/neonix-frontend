@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <>
       <section className="relative md:min-h-[375px] container mx-auto">
-        <div className="hero-slide-up flex flex-col mt-[200px] px-4">
-          <h1 className="text-3xl md:text-[90px] font-medium mt-6 leading-none">
+        <div className="flex flex-col mt-[200px] px-4">
+          <h1 className="text-6xl md:text-[90px] font-medium mt-6 leading-none">
             Neonix Labs
             <br />{" "}
-            <span className="font-thin text-2xl md:text-[75px]">
+            <span className="font-thin text-4xl md:text-[75px]">
               We create exceptional products that surprise and empower.
             </span>
           </h1>
