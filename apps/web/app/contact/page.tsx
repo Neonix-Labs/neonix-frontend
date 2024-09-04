@@ -1,6 +1,6 @@
 "use client";
 
-import { sendMail } from "@/actions/contact/send-email";
+import { sendMail } from "@/actions/send-email";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,

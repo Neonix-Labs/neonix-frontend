@@ -5,7 +5,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "format": "biome format --write .",
-    "lint": "turbo lint && manypkg check",
+    "lint": "turbo lint",
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
@@ -16,13 +16,9 @@
     "node": ">=18"
   },
   "packageManager": "npm@9.9.3",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "dependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@manypkg/cli": "^0.21.4",
     "tailwindcss": "^3.4.10"
   }
 }

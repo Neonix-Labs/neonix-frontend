@@ -52,12 +52,12 @@ export default function AboutPage() {
       </div>
 
       <div className="pt-32 relative">
-        <div className="container mx-auto max-w-7xl space-y-12">
+        <div className="container mx-auto space-y-12">
           <h2 className="font-bold text-4xl text-center leading-snug">
             Our Values
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {coreValues.map((core, index) => (
               <div
                 key={index}

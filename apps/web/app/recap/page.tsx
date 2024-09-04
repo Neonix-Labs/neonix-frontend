@@ -47,7 +47,7 @@ export default function RecapPage() {
       </div>
 
       <div className="pt-32 relative">
-        <div className="container mx-auto max-w-7xl space-y-12">
+        <div className="container mx-auto space-y-12">
           <div className="text-center">
             <h2 className="text-3xl lg:text-4xl font-bold lg:tracking-tight">
               Upcoming Features
@@ -57,7 +57,7 @@ export default function RecapPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {features.map((feat, index) => (
               <div
                 key={index}

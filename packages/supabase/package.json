@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     "./server": "./src/server.ts",
-    "./client": "./src/client.ts"
+    "./client": "./src/client.ts",
+    "./middleware": "./src/middleware.ts"
   },
   "scripts": {
     "lint": "biome check ."

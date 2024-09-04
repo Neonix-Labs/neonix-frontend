@@ -2,8 +2,15 @@
 
 import { ContactTemplate } from "@repo/email-templates/contact";
 import { Resend } from "resend";
-import { actionClient } from "../safe-actions";
-import { sendMailSchema } from "./schema";
+import { z } from "zod";
+import { actionClient } from "./safe-actions";
+
+const sendMailSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  phone: z.string().optional(),
+  message: z.string(),
+});
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

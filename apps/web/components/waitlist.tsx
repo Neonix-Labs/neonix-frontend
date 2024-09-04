@@ -1,6 +1,6 @@
 "use client";
 
-import { joinWaitlist } from "@/actions/waitlist/join-waitlist";
+import { joinWaitlist } from "@/actions/join-waitlist";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,

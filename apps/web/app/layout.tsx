@@ -3,13 +3,10 @@ import "@repo/ui/globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Providers } from "@/lib/providers";
-import { config } from "@/lib/wagmi";
 import { cn } from "@repo/ui/utils";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
-import { headers } from "next/headers";
 import { Toaster } from "sonner";
-import { cookieToInitialState } from "wagmi";
 
 export const metadata: Metadata = {
   title: "Neonix Labs",
@@ -21,8 +18,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const initialState = cookieToInitialState(config, headers().get("cookie"));
-
   return (
     <html lang="en">
       <body
@@ -33,7 +28,7 @@ export default function RootLayout({
       >
         <div className="dotted-bg absolute w-screen h-full inset-0" />
 
-        <Providers initialState={initialState}>
+        <Providers>
           <div className="px-4 sm:px-0 overflow-hidden md:overflow-visible hero-slide-up">
             <Header />
 
