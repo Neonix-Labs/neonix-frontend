@@ -61,7 +61,7 @@ export default function AboutPage() {
             {coreValues.map((core, index) => (
               <div
                 key={index}
-                className="border border-zinc-800 basis-1/3 bg-black/50 p-10 flex flex-col gap-4 rounded-md"
+                className="border border-zinc-800 basis-1/3 bg-cardCustom p-10 flex flex-col gap-4 rounded-md"
               >
                 <h3 className="font-bold text-lg">{core.title}</h3>
                 <p className="text-base font-light">{core.description}</p>

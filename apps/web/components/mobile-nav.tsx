@@ -129,11 +129,11 @@ export function MobileNav() {
 
           <motion.li variants={itemVariant}>
             <Link
-              href="/contact"
+              href="/talk-to-us"
               onClick={() => toggleMenu()}
               className="h-8 items-center justify-center text-sm font-medium px-3 py-2 inline-flex text-secondary-foreground transition-opacity hover:opacity-70 duration-200"
             >
-              Contact
+              Talk to us
             </Link>
           </motion.li>
         </motion.ul>

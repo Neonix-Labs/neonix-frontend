@@ -122,7 +122,7 @@ export default function ContactPage() {
                 )}
               />
 
-              <SubmitButton isSubmitting={isPending} variant="outline">
+              <SubmitButton isSubmitting={isPending} variant="blueish">
                 Send message
               </SubmitButton>
             </form>

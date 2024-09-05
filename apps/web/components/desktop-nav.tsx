@@ -47,12 +47,12 @@ export function DesktopNav() {
           About
         </Button>
       </Link>
-      <Link href="/contact">
+      <Link href="/talk-to-us">
         <Button
           variant="outline"
           className="border-none !ring-0 outline-none h-12 px-6 focus-visible:outline-none rounded-none"
         >
-          Contact
+          Talk to us
         </Button>
       </Link>
     </>

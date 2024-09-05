@@ -55,11 +55,8 @@ export default function Home() {
 
           <div className="mt-8">
             <div className="flex items-center space-x-4">
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  className="border border-primary h-12 px-6"
-                >
+              <Link href="/talk-to-us">
+                <Button variant="blueish" className="h-12 px-6">
                   Talk to us
                 </Button>
               </Link>
