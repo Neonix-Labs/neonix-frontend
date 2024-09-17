@@ -45,11 +45,11 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="container max-w-[750px] relative mx-auto px-4 text-center">
+      <div className="container relative mx-auto px-4 text-center">
         <h1 className="mt-24 font-medium text-5xl mb-16 leading-snug">
           Talk to us
         </h1>
-        <p className="text-zinc-500 mb-8">
+        <p className="text-zinc-500 mb-8 text-2xl lg:text-3xl">
           We value your feedback and are always open to exploring new
           partnerships and collaborations. Don't hesitate to reach out – we're
           excited to see how we can create something amazing together.

@@ -8,7 +8,11 @@ import {
   AccordionTrigger,
 } from "@repo/ui/accordion";
 import { Button } from "@repo/ui/button";
+import { cn } from "@repo/ui/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 
 const features = [
   {
@@ -117,14 +121,15 @@ const faq = [
 ];
 
 export default function RecapPage() {
+  const [activeTier, setActiveTier] = useState("free");
   return (
     <>
-      <div className="container max-w-[750px] relative mx-auto px-4 text-center">
-        <h1 className="mt-24 font-medium text-5xl leading-snug">Recap</h1>
-        <h1 className="font-thin text-5xl mb-4 leading-snug">
+      <div className="container relative mx-auto px-4">
+        <h1 className="mt-24 font-medium text-7xl leading-snug">Recap</h1>
+        <h1 className="font-thin text-6xl mb-4 leading-snug">
           Your Web3 Story, Unfolded
         </h1>
-        <p className="text-zinc-500 mb-8">
+        <p className="text-zinc-500 mb-8 text-2xl lg:text-3xl">
           Tired of sifting through endless transactions? Recap gives you the big
           picture. Connect your Web3 wallet (or simply enter your address) to
           instantly see a visual summary of your crypto activity over any time
@@ -132,77 +137,101 @@ export default function RecapPage() {
         </p>
       </div>
 
-      <section className="container mx-auto pt-10  px-4 relative">
-        <h1 className="mt-24 font-medium text-center text-6xl leading-none">
-          Pricing
-        </h1>
+      <div className="pt-24">
+        <RecapWailist />
+      </div>
 
-        <div className="grid md:grid-cols-2 max-w-[800px] mx-auto gap-4 md:gap-10 mt-20">
-          <div className="relative p-8 space-y-8 border border-border bg-cardCustom text-left md:p-14 rounded-lg flex flex-col">
-            <h3 className="font-medium text-2xl md:text-4xl leading-none">
-              Basic Features
-            </h3>
-            <p className="font-thin text-4xl md:text-4xl leading-none">FREE</p>
-
-            <ul className="space-y-2">
-              <li className="text-lg md:text-xl">Basic Wallet Connection</li>
-              <li className="text-lg md:text-xl">Visual Transaction History</li>
-              <li className="text-lg md:text-xl">Top Tokens Overview</li>
-              <li className="text-lg md:text-xl">Transaction Trends</li>
-              <li className="text-lg md:text-xl">Gas Fee Tracking</li>
-            </ul>
+      <div className="pt-32 relative">
+        <div className="container mx-auto mt-10 px-4 relative space-y-8 items-center flex flex-col">
+          <div className="h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground grid grid-cols-2 w-52">
+            <button
+              className={cn(
+                activeTier === "free"
+                  ? "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-background text-foreground shadow-sm"
+                  : "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+              )}
+              onClick={() => setActiveTier("free")}
+            >
+              Basic
+            </button>
+            <button
+              className={cn(
+                activeTier === "premium"
+                  ? "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-background text-foreground shadow-sm"
+                  : "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+              )}
+              onClick={() => setActiveTier("premium")}
+            >
+              Recap Plus
+            </button>
           </div>
 
-          <div className="relative p-8 space-y-8 border border-border bg-cardCustom text-left md:p-14 rounded-lg flex flex-col">
-            <h3 className="font-medium text-2xl md:text-4xl leading-none">
-              Premium
-            </h3>
-            <p className="font-thin text-4xl md:text-4xl leading-none">
-              $199.99
-            </p>
+          {activeTier === "free" ? (
+            <motion.div
+              className="flex flex-wrap gap-2 justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            >
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Basic Wallet Connection
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Visual Transaction History
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Top Tokens Overview
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Transaction Trends
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Gas Fee Tracking
+              </span>
+            </motion.div>
+          ) : null}
 
-            <ul className="space-y-2">
-              <li className="text-lg md:text-xl">Basic Wallet Connection</li>
-              <li className="text-lg md:text-xl">Visual Transaction History</li>
-              <li className="text-lg md:text-xl">Top Tokens Overview</li>
-              <li className="text-lg md:text-xl">Transaction Trends</li>
-              <li className="text-lg md:text-xl">Gas Fee Tracking</li>
-              <li className="text-lg md:text-xl">Advanced Analytics</li>
-              <li className="text-lg md:text-xl">
+          {activeTier === "premium" ? (
+            <motion.div
+              className="flex flex-wrap gap-2 justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            >
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Basic Wallet Connection
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Visual Transaction History
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Top Tokens Overview
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Transaction Trends
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Gas Fee Tracking
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Advanced Analytics
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
                 Portfolio Performance Tracking
-              </li>
-              <li className="text-lg md:text-xl">Tax Reporting Assistance</li>
-              <li className="text-lg md:text-xl">Custom Date Range Analysis</li>
-              <li className="text-lg md:text-xl">Priority Support</li>
-            </ul>
-
-            <div className="mt-8">
-              <div className="flex items-center space-x-4">
-                <Link href="/talk-to-us">
-                  <Button variant="blueish" className="h-12 px-6">
-                    Talk to us
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Tax Reporting Assistance
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Custom Date Range Analysis
+              </span>
+              <span className="border border-border py-1.5 px-4 text-sm rounded-full">
+                Priority Support
+              </span>
+            </motion.div>
+          ) : null}
         </div>
-      </section>
-
-      <section className="container mx-auto pt-24  px-4 relative max-w-[800px]">
-        <h4 className="text-4xl text-center">Frequently asked questions</h4>
-
-        <div className="mt-10">
-          {faq.map((item, index) => (
-            <Accordion type="single" collapsible key={index}>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>{item.title}</AccordionTrigger>
-                <AccordionContent>{item.description}</AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          ))}
-        </div>
-      </section>
+      </div>
 
       <div className="pt-32 relative">
         <div className="container mx-auto space-y-12">
@@ -229,7 +258,20 @@ export default function RecapPage() {
         </div>
       </div>
 
-      <RecapWailist />
+      <section className="container mx-auto pt-24 px-4 relative">
+        <h4 className="text-4xl ">Frequently asked questions</h4>
+
+        <div className="mt-10">
+          {faq.map((item, index) => (
+            <Accordion type="single" collapsible key={index}>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>{item.title}</AccordionTrigger>
+                <AccordionContent>{item.description}</AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

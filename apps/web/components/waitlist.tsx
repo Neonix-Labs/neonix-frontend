@@ -27,11 +27,10 @@ export function RecapWailist() {
     defaultValues: { email: "" },
   });
 
-  const {
-    execute: send,
-    isPending,
-    hasSucceeded,
-  } = useAction(joinWaitlist, {
+  const { execute: send, isPending } = useAction(joinWaitlist, {
+    onSuccess: () => {
+      toast.success("Subscribed to waitlist successfully");
+    },
     onError: () => {
       toast.info("Thank you for joining our waitlist!", {
         description:
@@ -42,14 +41,14 @@ export function RecapWailist() {
 
   return (
     <section className="relative container mx-auto">
-      <div className="relative border p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center bg-white border-border">
-        <h1 className="font-medium text-center text-5xl leading-snug text-black">
+      <div className="relative border-4 border-blue-500 bg-white/5 p-8 md:px-20 md:py-20 mt-20 rounded-lg flex flex-col items-center text-center">
+        <h1 className="font-medium text-center text-5xl leading-snug">
           Coming soon
         </h1>
-        <h1 className="font-thin text-center text-3xl mb-4 leading-snug text-black">
+        <h1 className="font-thin text-center text-3xl my-2 mb-4 leading-snug">
           Join the waitlist
         </h1>
-        <p className="text-zinc-800 mb-8">
+        <p className="text-zinc-500 mb-8 text-2xl lg:text-3xl">
           Recap is currently in development. By joining our waiting list, you'll
           get early access to the free tier and be notified about our launch and
           upcoming features.
@@ -57,53 +56,34 @@ export function RecapWailist() {
 
         <div className="mt-8">
           <div className="flex justify-center">
-            {hasSucceeded ? (
-              <div className="rounded-md border border-[#2C2C2C] font-sm text-primary h-11 w-[330px] flex items-center py-1 px-3 justify-between">
-                <p>Subscribed</p>
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(send)}
+                className="flex items-start gap-2 justify-start"
+              >
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="text-left">
+                      <FormControl>
+                        <Input
+                          placeholder="john@doe.com"
+                          type="email"
+                          {...field}
+                          className="min-w-72 h border border-zinc-500"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-                <svg
-                  width="17"
-                  height="17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Check</title>
-                  <path
-                    d="m14.546 4.724-8 8-3.667-3.667.94-.94 2.727 2.72 7.06-7.053.94.94Z"
-                    fill="#fff"
-                  />
-                </svg>
-              </div>
-            ) : (
-              <Form {...form}>
-                <form
-                  onSubmit={form.handleSubmit(send)}
-                  className="flex items-start gap-2 justify-start"
-                >
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem className="text-left">
-                        <FormControl>
-                          <Input
-                            placeholder="john@doe.com"
-                            type="email"
-                            {...field}
-                            className="min-w-72"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <SubmitButton isSubmitting={isPending} variant="blueish">
-                    Subscribe
-                  </SubmitButton>
-                </form>
-              </Form>
-            )}
+                <SubmitButton isSubmitting={isPending} variant="blueish">
+                  Subscribe
+                </SubmitButton>
+              </form>
+            </Form>
           </div>
         </div>
       </div>

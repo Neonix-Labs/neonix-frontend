@@ -8,7 +8,7 @@ export function Header() {
   return (
     <div className="container mx-auto top-4 sticky z-50">
       <header className="mt-4 px-2 md:px-4 md:flex justify-center">
-        <nav className="border border-border px-4 flex justify-between items-center gap-3 backdrop-filter backdrop-blur-xl bg-zinc-900 rounded-md bg-opacity-70 h-[50px] z-20">
+        <nav className="border border-border px-4 flex justify-between items-center gap-10 backdrop-filter backdrop-blur-xl bg-zinc-900 rounded-md bg-opacity-70 h-[50px] z-20">
           <Link href="/" prefetch={false}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ export function Header() {
             <span className="sr-only">Neonix Labs</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-10">
             <DesktopNav />
 
             {/* <Suspense fallback={<p>Loading...</p>}>

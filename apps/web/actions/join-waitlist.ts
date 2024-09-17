@@ -27,7 +27,7 @@ export const joinWaitlist = actionClient
 
     await resend.emails.send({
       from: "Neonix Labs <onboarding@resend.dev>",
-      to: ["tiagoagm@gmail.com"],
+      to: email,
       subject: "User Joined the Recap Waitlist",
       react: WaitlistTemplate(),
     });
